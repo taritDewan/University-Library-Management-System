@@ -1,0 +1,453 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+/* Global CSS Start */
+.white-color-text {
+  color: #fff !important;
+}
+
+.title-text {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.title-text-uppercase {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.divider {
+  padding: 100px 0 50px 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  z-index: -5;
+}
+/* Global CSS End */
+/* Navbar CSS Start */
+.nav {
+  background-color: #007bb6 !important;
+}
+
+.nav .navbar-brand img {
+  max-width: 100px;
+}
+
+.nav .nav-link a {
+  color: #fff !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    letter-spacing: 0.1em;
+  }
+  .navbar .navbar-nav .nav-link {
+    padding: 0.5em 1em;
+  }
+  .search-and-icons {
+    width: 50%;
+  }
+  .search-and-icons form {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar .navbar-brand img {
+    max-width: 7em;
+  }
+  .navbar .navbar-collapse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .search-and-icons {
+    display: flex;
+    align-items: center;
+  }
+}
+.search-and-icons form input {
+  border-radius: 0;
+  height: 2em;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='grey' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E")
+    no-repeat 95%;
+}
+.search-and-icons form input:focus {
+  background: #fff;
+  box-shadow: none;
+}
+.search-and-icons .user-icons div {
+  padding-right: 1em;
+}
+
+.user-icons {
+  color: #fff;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 200px;
+  background: #ffcc00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #353842;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+  color: #fff;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #353842;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+  z-index: 2;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  left: 15px;
+  color: #ffcc00;
+  transform: translateY(-50%);
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 6px;
+  background-color: #353842;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+.uil-bars:before,
+.uil-times:before,
+.uil-search:before {
+  color: #fff;
+}
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: #ffcc00;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+    background-color: #007bb6;
+  }
+  .nav .navOpenBtn {
+    color: #353842;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #353842;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+/* Navbar CSS End */
+/* Hero CSS Start */
+.hero {
+  height: 100vh;
+  background-image: url("../images/hero-image.jpg");
+  background-color: rgb(255, 255, 255, 0.1);
+  background-blend-mode: lighten;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: -5 !important;
+}
+
+.hero-sub-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-button button {
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+/* Hero CSS End */
+/* About CSS Start */
+/* .about {
+  height: 90vh;
+} */
+
+.about-text-section {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-image img {
+  height: 80vh;
+  width: 100%;
+  object-fit: cover;
+}
+/* About CSS End */
+/* Products CSS Start */
+.products-texts {
+  text-align: center;
+}
+
+.products-content .card-body {
+  text-align: center;
+}
+/* Products CSS End */
+/* Catagory CSS Start */
+.catagory-texts {
+  text-align: center;
+}
+
+.catagory-content .card-body {
+  text-align: center;
+}
+/* Catagory CSS End */
+/* News & Blog CSS Start */
+.newsblog-texts {
+  text-align: center;
+}
+/* News & Blog CSS End */
+/* Review CSS Start */
+.review-title {
+  text-align: center;
+}
+
+.review-content .card-body {
+  text-align: center;
+}
+
+.checked {
+  color: yellow;
+  font-size: 20px;
+}
+.unchecked {
+  font-size: 20px;
+}
+
+.review-content .card-body img {
+  border-radius: 50%;
+  margin: 20px 0;
+  height: 50px;
+  width: 50px;
+}
+/* Review CSS End */
+/* Newsletter CSS Start */
+.newsletter {
+  background-color: #007bb6;
+  position: relative;
+  z-index: -2;
+}
+
+.input-group input {
+  background-color: transparent;
+  border: #fff 2px solid;
+}
+
+.input-group input,
+button {
+  height: 50px;
+}
+
+.input-group input:focus {
+  background-color: transparent;
+  border: #fff 2px solid;
+  box-shadow: none;
+  color: #fff;
+}
+
+.input-group input::placeholder {
+  color: #fff;
+}
+/* Newsletter CSS End */
+/* Footer CSS Start */
+.footer-wrapper {
+  padding: 50px 0;
+}
+.footer-logo img {
+  width: 150px;
+}
+
+.footer-texts {
+  padding-top: 30px;
+  line-height: 0.5;
+}
+
+.footer-social i {
+  font-size: 30px;
+  padding: 0 10px;
+}
+.navigation {
+  padding-top: 10px;
+}
+
+.navigation a {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.footer-divider {
+  border: #007bb6 1px solid;
+}
+/* Footer CSS End */
+/* Custom Scroll Bar CSS Start */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d1e5ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#642bff, #ff22e6);
+}
+/* Custom Scroll Bar CSS End */
+/* Responsive CSS Start */
+@media (max-width: 330px) {
+  .title-text {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 537px) {
+  .footer-texts {
+    line-height: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-text-section {
+    height: auto;
+    display: block;
+  }
+
+  .about-image img {
+    height: 100%;
+  }
+}
+/* Responsive CSS End */
